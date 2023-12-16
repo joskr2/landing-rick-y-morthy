@@ -5,11 +5,9 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <>
-      <Hero />
+    <div className='my-3'>
       <Grid />
-      <Footer />
-    </>
+    </div>
   )
 }
 
