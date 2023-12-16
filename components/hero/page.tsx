@@ -7,7 +7,7 @@ interface Props {
 
 const Hero = () => {
   return (
-    <div className='my-6 p-5'>
+    <div className='mx-auto flex max-w-7xl items-center justify-between'>
       <main >
         <div className="relative isolate">
           <svg

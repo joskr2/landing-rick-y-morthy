@@ -1,5 +1,6 @@
 import { MailIcon, PhoneIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
+import Axios from 'axios'
 
 const people = [
   {
@@ -48,11 +49,18 @@ const people = [
     return data.results
   }
 
+  const getCharactersWithAxios = async () => {
+    const res = await Axios.get('https://rickandmortyapi.com/api/character')
+    const data = await res.data.results
+    return data
+  
+  }
+
 
 const Grid = () => {
   getCharacters().then((data) => console.log(data))
   return (
-    <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  ">
     {people.map((person) => (
       <li
         key={person.email}
